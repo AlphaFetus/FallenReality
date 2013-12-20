@@ -343,7 +343,7 @@ Skills:
                 Rank_5: 25.0
                 Rank_6: 20.0
                 Rank_7: 10.0
-                #  ^^^^ Changed to 15 from 10 by Alpha Fetus. To balance the diference between rank 7 and 8.
+                #  ^^^^ Changed to 10 from 15 by Alpha Fetus. To balance the diference between rank 7 and 8.
                 Rank_8: 0.0
                 #  ^^^^ Changed to 0 from 10 by Alpha Fetus. By order of Aridean.
     #
