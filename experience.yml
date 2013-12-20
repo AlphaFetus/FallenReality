@@ -32,8 +32,8 @@ Experience_Formula:
     # Experience gained in every skill will get multiplied by this value. 1.0 by default, 2.0 means two times as much
     Multiplier:
         Global: 1.0
-        PVP: 1.0
-
+        PVP: 1.3
+    #  ^^^^ Changed to 1.3 from 1.0 by Alpha Fetus. Gains more Battle Skills in PVP vs. Monsters
     # Experience gained from mobs not naturally spawned will get multiplied by this value. 0 by default.
     Mobspawners:
         Multiplier: 0
@@ -89,7 +89,8 @@ Experience:
         Oak: 70
         Spruce: 80
         Birch: 90
-        Jungle: 100
+        Jungle: 70
+    #  ^^^^ Changed to 70 from 100 by Alpha Fetus. There are more Jungle than Birch, shouldn't you get less not more?
         Huge_Mushroom_Red: 70
         Huge_Mushroom_Brown: 70
     Herbalism:
@@ -147,7 +148,8 @@ Experience:
         Animal_Taming:
             Wolf: 250
             Ocelot: 500
-            Horse: 1000
+            Horse: 1250
+        #  ^^^^ Changed to 1250 from 1000 by Alpha Fetus. Horses are hard to come by.
     Combat:
         Multiplier:
             Animals: 1.0
@@ -158,7 +160,8 @@ Experience:
             Zombie: 2.0
             Slime: 2.0
             Ghast: 3.0
-            Pig_Zombie: 3.0
+            Pig_Zombie: 4.0
+            #  ^^^^ Changed to 4 from 3 by Alpha Fetus. Risky to travel to nether. More risk, more reward.
             Enderman: 1.0
             Cave_Spider: 3.0
             Silverfish: 3.0
