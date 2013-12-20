@@ -1,389 +1,509 @@
 #
-#  mcMMO configuration
+#  Advanced configuration
 #  Last updated on 1.4.07-b${BUILD_NUMBER}
+#
+#  For advanced users only! There is no need to change anything here.
+#
+#  You can customize almost every aspect of every skill here.
+#  Its mainly here if you've customized the experience formula.
+#  Configure at what level you get better with certain abilities.
 #
 #####
 
 #
-#  Settings for mcMMO in general
-###
-General:
-    Locale: en_US
-    MOTD_Enabled: false
-    # Amount of time (in minutes) to wait between saves of player information
-    Save_Interval: 10
-    # Allow mcMMO to report on basic anonymous usage
-    Stats_Tracking: true
-    # Allow mcMMO to check if a new version is available
-    Update_Check: true
-    Prefer_Beta: false
-    # Allow mcMMO to inform other plugins of damage being dealt
-    Event_Callback: true
-    # Allow mcMMO to create zip backups for flatfile data on shutdown.
-    Generate_Backups: true
-    Power_Level_Cap: 0
-    # Should mcMMO print out debug messages?
-    Verbose_Logging: false
-    # Should mcMMO over-write configs to update, or make new ones ending in .new?
-    Config_Update_Overwrite: true
-
-#
-#  Settings for the mcMMO scoreboards
-###
-Scoreboard:
-    # Display player's power levels below their names?
-    Power_Level_Tags: false
-
-    # Allow players to use "/mcscoreboard keep" to keep the scoreboard up
-    Allow_Keep: true
-
-    # Add some more color on the board :-)
-    Rainbows: false
-
-    # Settings for each type of scoreboard
-    Types:
-        # Settings for /mcrank
-        # The sub-options (Print, Board, Display_Time) are the same for each type.
-        Rank:
-            # Should the command output be printed in chat?
-            Print: false
-            # Should the command output be displayed in the scoreboard sidebar?
-            Board: true
-            # Amount of time (seconds) to display in the sidebar before clearing.
-            # To display permanently, use "/mcscoreboard keep" or set to -1
-            Display_Time: 15
-        # Settings for /mctop
-        Top:
-            Print: true
-            Board: true
-            Display_Time: 15
-        # Settings for /mcstats
-        Stats:
-            Print: false
-            Board: true
-            Display_Time: 15
-        # Settings for /inspect
-        Inspect:
-            Print: false
-            Board: true
-            Display_Time: 20
-        # Settings for /mccooldown
-        Cooldown:
-            Print: true
-            Board: true
-            Display_Time: 41
-        # Settings for /<skillname> (e.g. /mining, /unarmed)
-        # No "print" option is given here; the information will always be displayed in chat.
-        # It should also be noted that this display is pretty dang cool.
-        Skill:
-            Board: true
-            Display_Time: 30
-
-            # Should the board be shown when a player levels up, and for how long?
-            # It is recommended to NOT have LevelUp_Time be -1, as this may confuse players.
-            LevelUp_Board: true
-            LevelUp_Time: 5
-
-Mob_Healthbar:
-    # Default display for mob health bars - HEARTS, BAR, or DISABLED
-    Display_Type: BAR
-    # Amount of time (in seconds) to display. To display permanently, set to -1
-    Display_Time: 3
-
-Database_Purging:
-    # Amount of time (in hours) to wait between database purging
-    # To only run at server start, set to 0
-    # To never run, set to -1
-    Purge_Interval: -1
-    # Any user who hasn't connected in this many months will be purged from the database
-    # To never purge old users, set to -1
-    Old_User_Cutoff: 6
-
-#
-#  Settings for using a mySQL database
-###
-MySQL:
-    Enabled: false
-    Database:
-        User_Name: UserName
-        User_Password: UserPassword
-        Name: DataBaseName
-        TablePrefix: mcmmo_
-    Server:
-        Port: 3306
-        Address: localhost
-
-#
-#  Settings for Hardcore mode
-###
-Hardcore:
-    Death_Stat_Loss:
-        Penalty_Percentage: 75.0
-        Enabled:
-            Acrobatics: false
-            Archery: false
-            Axes: false
-            Excavation: false
-            Fishing: false
-            Herbalism: false
-            Mining: false
-            Repair: false
-            Swords: false
-            Taming: false
-            Unarmed: false
-            Woodcutting: false
-    Vampirism:
-        Leech_Percentage: 5.0
-        Enabled:
-            Acrobatics: false
-            Archery: false
-            Axes: false
-            Excavation: false
-            Fishing: false
-            Herbalism: false
-            Mining: false
-            Repair: false
-            Swords: false
-            Taming: false
-            Unarmed: false
-            Woodcutting: false
-
-#
-#  Settings for SMP Mods
-###
-Mods:
-    Tool_Mods_Enabled: false
-    Armor_Mods_Enabled: false
-    Block_Mods_Enabled: false
-    Entity_Mods_Enabled: false
-
-#
-#  Settings for mcMMO items
-###
-Items:
-    Chimaera_Wing:
-        Enabled: true
-        Cooldown: 240
-        Warmup: 5
-        RecentlyHurt_Cooldown: 60
-        Prevent_Use_Underground: true
-        Use_Cost: 1
-        Recipe_Cost: 5
-        Item_Name: FEATHER
-
-#
-#  Settings for Parties
-###
-Party:
-    # Amount of time (in hours) to wait between automatically kicking old party members
-    # To only run at server start, set to 0
-    # To never kick old users, set to -1
-    AutoKick_Interval: 12
-    # Any user who hasn't connected in this many days will get kicked from their party
-    Old_Party_Member_Cutoff: 7
-    # Settings for party share modes
-    Sharing:
-        ExpShare_enabled: true
-        ExpShare_bonus_base: 1.1
-        ExpShare_bonus_increase: 1.05
-        ExpShare_bonus_cap: 1.5
-        ItemShare_enabled: true
-        Range: 75.0
-
-#
-#  Settings for Abilities
-###
-Abilities:
-    Enabled: true
-    Messages: true
-    Activation:
-        Only_Activate_When_Sneaking: false
-    Cooldowns:
-        Berserk: 240
-        Blast_Mining: 60
-        Giga_Drill_Breaker: 240
-        Green_Terra: 240
-        Serrated_Strikes: 240
-        Skull_Splitter: 240
-        Super_Breaker: 240
-        Tree_Feller: 240
-    Max_Seconds:
-        Berserk: 0
-        Blast_Mining: 0
-        Giga_Drill_Breaker: 0
-        Green_Terra: 0
-        Serrated_Strikes: 0
-        Skull_Splitter: 0
-        Super_Breaker: 0
-        Tree_Feller: 0
-    Limits:
-       Tree_Feller_Threshold: 500
-    Tools:
-        # Use more tool durability while using abilities. Set Durability_Loss to 0 to disable the extra durability damage.
-        Durability_Loss: 1
-
-#
-#  Settings for Skills
-#  Level cap of 0 for no limit
+#  Settings for the Skills
 ###
 Skills:
+    General:
+        Ability:
+            # IncreaseLevel: This setting will determine when the length of every ability gets longer with 1 second
+            # EnchantBuff: This setting determines how many enchant levels to use when buffing Super Breaker & Giga Drill Breaker
+            IncreaseLevel: 50
+            EnchantBuff: 5
+    #
+    #  Settings for Acrobatics
+    ###
     Acrobatics:
-        Enabled_For_PVP: true
-        Enabled_For_PVE: true
-        Prevent_AFK_Leveling: true
-        Max_Tries_At_Same_Location: 3
-        Prevent_Dodge_Lightning: false
-        Prevent_XP_After_Teleport: true
-        Level_Cap: 0
+        Dodge:
+            # ChanceMax: Maximum chance of dodging when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: On this level or higher, the dodge chance will not go higher than <ChanceMax>
+            # DamageModifier: Dodge damage will be divided by this modifier
+            ChanceMax: 20.0
+            MaxBonusLevel: 800
+            DamageModifier: 2.0
+
+        Roll:
+            # ChanceMax: Maximum chance of rolling when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: On this level or higher, the roll chance will not go higher than <ChanceMax>
+            # DamageThreshold: The max damage a player can negate with a roll
+            ChanceMax: 100.0
+            MaxBonusLevel: 1000
+            DamageThreshold: 7.0
+
+        GracefulRoll:
+            # ChanceMax: Maximum chance of graceful rolling when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: On this level or higher, the graceful roll chance will not go higher than <ChanceMax>
+            # DamageThreshold: The max damage a player can negate with a graceful roll
+            ChanceMax: 100.0
+            MaxBonusLevel: 500
+            DamageThreshold: 14.0
+    #
+    #  Settings for Archery
+    ###
     Archery:
-        Enabled_For_PVP: true
-        Enabled_For_PVE: true
-        Level_Cap: 0
+        SkillShot:
+            # IncreaseLevel: Every <IncreaseLevel> the skillshot bonus will go up by <IncreasePercentage>
+            # IncreasePercentage: This is a percentage value, 0.1 = 10%
+            # MaxBonus: When the <MaxBonus> has been reached, the bonus percentage will not go up anymore. 2.0 = 200%
+            IncreaseLevel: 50
+            IncreasePercentage: 0.1
+            MaxBonus: 2.0
+            MaxDamage: 9.0
+
+        Daze:
+            # ChanceMax: Maximum chance of causing daze to opponents when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: Maximum bonus level of Daze, when a player reaches this level his chance of causing a daze will be <ChanceMax>
+            # Modifier: Extra damage for arrows that cause a daze (2 damage = 1 heart)
+            ChanceMax: 50.0
+            MaxBonusLevel: 1000
+            Modifier: 4.0
+
+        Retrieve:
+            # ChanceMax: Maximum chance of retrieving arrows when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: Maximum bonus level for Arrow retrieval, at this level the chance of retrieving arrows from mobs is <ChanceMax>
+            ChanceMax: 100.0
+            MaxBonusLevel: 1000
+
+        # ForceMultiplier: Multiply the force of the bow by this for an XP boost.
+        ForceMultiplier: 2.0
+    #
+    #  Settings for Axes
+    ###
     Axes:
-        Enabled_For_PVP: true
-        Enabled_For_PVE: true
-        Level_Cap: 0
-    Excavation:
-        Level_Cap: 0
+        DamageIncrease:
+            # MaxBonus: Maximum bonus damage when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: Level where <MaxBonus> is reached
+            MaxBonus: 4.0
+            MaxBonusLevel: 200
+
+        AxesCritical:
+            # ChanceMax: Maximum chance of causing a critical hit when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: Level where <ChanceMax> of causing critical hits is reached
+            ChanceMax: 37.50
+            MaxBonusLevel: 600
+
+        AxesCritical:
+            # Damage modifier of critical hits for PVP / PVE, when causing a critical hit the damage gets multiplied by the modifier
+            PVP_Modifier: 1.5
+            PVE_Modifier: 2.0
+
+        GreaterImpact:
+            # Chance: Chance of hitting with GreaterImpact, mobs are knocked backwards when successful
+            # KnockbackModifier: Velocity modifier of GreaterImpact hits, this determines how great the knockback is
+            # BonusDamage: Extra damage for GreaterImpact hits
+            Chance: 25.0
+            KnockbackModifier: 1.5
+            BonusDamage: 2.0
+
+        ArmorImpact:
+            # IncreaseLevel: Every <IncreaseLevel> the durability damage goes up with 1
+            # Chance: Chance of hitting with ArmorImpact
+            # MaxPercentageDurabilityDamage: Durability damage cap for ArmorImpact, 20% means that you can never destroy a piece of armor in less than 5 hits
+            IncreaseLevel: 50
+            Chance: 5.0
+            MaxPercentageDurabilityDamage: 10.0
+
+        SkullSplitter:
+            # DamageModifier: Damage will get divided by this modifier
+            DamageModifier: 2.0
+    #
+    #  Settings for Fishing
+    ###
     Fishing:
-        Drops_Enabled: true
-        Level_Cap: 0
+        # Rank_Levels: Fishing level where rank gets unlocked
+        Rank_Levels:
+            Rank_1: 0
+            Rank_2: 125
+            Rank_3: 250
+            Rank_4: 375
+            Rank_5: 500
+            Rank_6: 625
+            Rank_7: 700
+            Rank_8: 875
+
+        ShakeChance:
+            Rank_1: 15.0
+            Rank_2: 15.0
+            Rank_3: 25.0
+            Rank_4: 35.0
+            Rank_5: 45.0
+            Rank_6: 55.0
+            Rank_7: 65.0
+            Rank_8: 75.0
+
+        # VanillaXPMultiplier: Vanilla XP gained from fishing is multiplied by these values.
+        VanillaXPMultiplier:
+            Rank_1: 1
+            Rank_2: 2
+            Rank_3: 3
+            Rank_4: 3
+            Rank_5: 4
+            Rank_6: 4
+            Rank_7: 5
+            Rank_8: 5
+
+        FishermansDiet:
+            # This determines when Fisherman's Diet adds extra hunger recovery to food
+            RankChange: 200
+
+        IceFishing:
+            # UnlockLevel: Fishing level when the Ice Fishing ability unlocks
+            UnlockLevel: 50
+
+        MasterAngler:
+            # UnlockLevel: Fishing level when the Master Angler ability unlocks
+            # BoatMultiplier: Catch rate is multiplied by this modifier
+            # BiomeModifier: Catch rate is multiplied by this modifier
+            UnlockLevel: 125
+            BoatModifier: 2.0
+            BiomeModifier: 2.0
+    #
+    #  Settings for Herbalism
+    ###
     Herbalism:
-        Level_Cap: 0
-        Prevent_AFK_Leveling: true
+        FarmersDiet:
+            # This determines when Farmers Diet adds extra hunger recovery to food
+            RankChange: 200
+
+        GreenThumb:
+            # StageChange: Level value when the GreenThumb stage rank goes up
+            # ChanceMax: Maximum chance of GreenThumb when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: On this level, GreenThumb chance will be <ChanceMax>
+            StageChange: 200
+            ChanceMax: 100.0
+            MaxBonusLevel: 1500
+
+        DoubleDrops:
+            # ChanceMax: Maximum chance of receiving double drops when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: Level when <ChanceMax> of receiving double drops is reached
+            ChanceMax: 100.0
+            MaxBonusLevel: 1000
+
+        HylianLuck:
+            # ChanceMax: Maximum chance of Hylian Luck when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: On this level, Hylian Luck chance will be <ChanceMax>
+            ChanceMax: 10.0
+            MaxBonusLevel: 1000
+
+        ShroomThumb:
+            # ChanceMax: Maximum chance of ShroomThumb when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: On this level, ShroomThumb chance will be <ChanceMax>
+            ChanceMax: 50.0
+            MaxBonusLevel: 1500
+    #
+    #  Settings for Mining
+    ###
     Mining:
-        Level_Cap: 0
-        Detonator_Name: FLINT_AND_STEEL
+        DoubleDrops:
+            # ChanceMax: Maximum chance of receiving double drops when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: Level when <ChanceMax> of receiving double drops is reached
+            ChanceMax: 100.0
+            MaxBonusLevel: 1000
+
+        # BlastMining_Rank: BlastMining rank unlocks
+        BlastMining:
+            Rank_Levels:
+                Rank_1: 125
+                Rank_2: 250
+                Rank_3: 375
+                Rank_4: 500
+                Rank_5: 625
+                Rank_6: 750
+                Rank_7: 875
+                Rank_8: 1000
+
+            # BlastDamageDecrease Ranks: % of damage reduced from TNT explosions
+            BlastDamageDecrease:
+                Rank_1: 0.0
+                Rank_2: 0.0
+                Rank_3: 0.0
+                Rank_4: 25.0
+                Rank_5: 25.0
+                Rank_6: 50.0
+                Rank_7: 50.0
+                Rank_8: 100.0
+
+            # OreBonus Ranks: % of extra ores received when Blast Mining
+            OreBonus:
+                Rank_1: 35.0
+                Rank_2: 40.0
+                Rank_3: 45.0
+                Rank_4: 50.0
+                Rank_5: 55.0
+                Rank_6: 60.0
+                Rank_7: 65.0
+                Rank_8: 70.0
+
+            # DebrisReduction_Rank: % of fewer non-ores received when Blast Mining
+            DebrisReduction:
+                Rank_1: 10.0
+                Rank_2: 20.0
+                Rank_3: 30.0
+                Rank_4: 30.0
+                Rank_5: 30.0
+                Rank_6: 30.0
+                Rank_7: 30.0
+                Rank_8: 30.0
+
+            # DropMultiplier Ranks: # of times each ore will drop
+            DropMultiplier:
+                Rank_1: 1
+                Rank_2: 1
+                Rank_3: 1
+                Rank_4: 1
+                Rank_5: 2
+                Rank_6: 2
+                Rank_7: 3
+                Rank_8: 3
+
+            # BlastRadiusModifier Ranks: Increases the blast radius by this amount
+            BlastRadiusModifier:
+                Rank_1: 1.0
+                Rank_2: 1.0
+                Rank_3: 2.0
+                Rank_4: 2.0
+                Rank_5: 3.0
+                Rank_6: 3.0
+                Rank_7: 4.0
+                Rank_8: 4.0
+    #
+    #  Settings for Repair
+    ###
     Repair:
-        Level_Cap: 0
-        Anvil_Messages: true
-        Anvil_Material: IRON_BLOCK
-        Salvage_Anvil_Material: GOLD_BLOCK
-        Salvage_tools: true
-        Salvage_armor: true
-        # Ask for a confirmation when a player tries to repair an enchanted item
-        Confirm_Required: true
+        RepairMastery:
+            # MaxBonusPercentage: Maximum bonus percentage for Repair Mastery
+            # MaxBonusLevel: On this level, the maximum bonus is reached
+            MaxBonusPercentage: 200.0
+            MaxBonusLevel: 1000
+
+        SuperRepair:
+            # ChanceMax: Maximum chance of Super Repair when on <MaxBonusLevel> or higher
+            # MaxBonusLevel: On this level, Super Repair chance will be <ChanceMax>
+            ChanceMax: 100.0
+            MaxBonusLevel: 1000
+
+        Salvage:
+            # UnlockLevel: Level when Salvage become available
+            UnlockLevel: 600
+
+        ArcaneForging:
+            May_Lose_Enchants: true
+            Rank_Levels:
+                Rank_1: 125
+                Rank_2: 250
+                Rank_3: 375
+                Rank_4: 500
+                Rank_5: 625
+                Rank_6: 750
+                Rank_7: 875
+                Rank_8: 1000
+            Keep_Enchants_Chance:
+                Rank_1: 10.0
+                Rank_2: 20.0
+                Rank_3: 30.0
+                Rank_4: 40.0
+                Rank_5: 50.0
+                Rank_6: 50.0
+                Rank_7: 60.0
+                Rank_8: 100.0
+            Downgrades_Enabled: true
+            Downgrades_Chance:
+                Rank_1: 75.0
+                Rank_2: 50.0
+                Rank_3: 40.0
+                Rank_4: 30.0
+                Rank_5: 25.0
+                Rank_6: 20.0
+                Rank_7: 15.0
+                Rank_8: 10.0
+    #
+    #  Settings for Smelting
+    ###
     Smelting:
-        Level_Cap: 0
+        FuelEfficiency:
+            # Multiplier: The furnace burn time will be multiplied by this value.
+            # MaxBonusLevel: On this level, the efficiency multiplier will stop increasing
+            Multiplier: 3.0
+            MaxBonusLevel: 1000
+
+        SecondSmelt:
+            # ChanceMax: Maximum chance of triggering Second Smelt
+            # MaxBonusLevel: On this level, the chance to cause Second Smelt will be <ChanceMax>
+            ChanceMax: 100.0
+            MaxBonusLevel: 1000
+
+        FluxMining:
+            # UnlockLevel: Level when Flux Mining becomes available
+            # Chance: Chance for Flux Mining to activate
+            UnlockLevel: 250
+            Chance: 33.0
+
+        # Rank_Levels: Smelting level where rank gets unlocked
+        Rank_Levels:
+            Rank_1: 125
+            Rank_2: 250
+            Rank_3: 375
+            Rank_4: 500
+            Rank_5: 625
+            Rank_6: 750
+            Rank_7: 875
+            Rank_8: 1000
+
+        # VanillaXPMultiplier: Vanilla XP gained from smelting ores is multiplied by these values.
+        VanillaXPMultiplier:
+            Rank_1: 1
+            Rank_2: 2
+            Rank_3: 3
+            Rank_4: 3
+            Rank_5: 4
+            Rank_6: 4
+            Rank_7: 5
+            Rank_8: 5
+
+    #
+    #  Settings for Swords
+    ###
     Swords:
-        Enabled_For_PVP: true
-        Enabled_For_PVE: true
-        Level_Cap: 0
+        Bleed:
+            # ChanceMax: Maximum chance of triggering bleeding
+            # MaxBonusLevel: On this level, the chance to cause Bleeding will be <ChanceMax>
+            ChanceMax: 75.0
+            MaxBonusLevel: 750
+
+            # These settings determine how long the Bleeding effect lasts
+            MaxTicks: 3
+            BaseTicks: 2
+
+        Counter:
+            # RequiresBlock: Determines if blocking is required to trigger counter attack
+            RequiresBlock: true
+
+            # ChanceMax: Maximum chance of triggering a counter attack
+            # MaxBonusLevel: On this level, the chance to Counter will be <ChanceMax>
+            ChanceMax: 30.0
+            MaxBonusLevel: 600
+
+            # DamageModifier: Damaged caused by the damager will get divided by this modifier and dealt back to the damager
+            DamageModifier: 2.0
+
+        SerratedStrikes:
+            # DamageModifier: Damage will get divided by this modifier
+            # BleedTicks: This determines how long the bleeding effect of SerratedStrikes lasts
+            DamageModifier: 4.0
+            BleedTicks: 5
+    #
+    #  Settings for Taming
+    ###
     Taming:
-        Enabled_For_PVP: true
-        Enabled_For_PVE: true
-        Level_Cap: 0
-        Call_Of_The_Wild:
-            Bones_Required: 10
-            Fish_Required: 10
-            Apples_Required: 10
+        Gore:
+            # ChanceMax: Maximum chance of triggering gore
+            # MaxBonusLevel: On this level, the chance to cause Gore will be <ChanceMax>
+            ChanceMax: 100.0
+            MaxBonusLevel: 1000
 
-            # Range to check for nearby pets when using Call Of The Wild, 0 will disable the check
-            Range: 40.0
-            # Amount of pets to summon when using Call Of The Wild
-            Wolf_Amount: 1
-            Ocelot_Amount: 1
-            Horse_Amount: 1
+            # BleedTicks: Determines the length of the bleeding effect
+            # Modifier: Damage will get multiplied by this modifier
+            BleedTicks: 2
+            Modifier: 2.0
+
+        FastFood:
+            # UnlockLevel: Level when FastFood unlocks
+            # Chance: The chance for wolves to heal hp when inflicting damage
+            UnlockLevel: 50
+            Chance: 50.0
+
+        EnvironmentallyAware:
+            # UnlockLevel: Level when EnvironmentallyAware unlocks
+            UnlockLevel: 100
+
+        ThickFur:
+            # UnlockLevel: Level when ThickFur unlocks
+            # Modifier: Damage will get divided by this modifier
+            UnlockLevel: 250
+            Modifier: 2.0
+
+        HolyHound:
+            # UnlockLevel: Level when HolyHound unlocks
+            UnlockLevel: 375
+
+        ShockProof:
+            # UnlockLevel: Level when ShockProof unlocks
+            # Modifier: Damage will get divided by this modifier
+            UnlockLevel: 500
+            Modifier: 6.0
+
+        SharpenedClaws:
+            # UnlockLevel: Level when SharpenedClaws unlocks
+            # Bonus: This bonus will get added to the damage caused
+            UnlockLevel: 750
+            Bonus: 2.0
+    #
+    #  Settings for Unarmed
+    ###
     Unarmed:
-        Enabled_For_PVP: false
-        Enabled_For_PVE: false
-        Level_Cap: 1
-        Block_Cracker:
-            SmoothBrick_To_CrackedBrick: true
+        Disarm:
+            # ChanceMax: Maximum chance of disarming other players
+            # MaxBonusLevel: Level when the maximum chance to disarm is reached
+            ChanceMax: 33.0
+            MaxBonusLevel: 1000
+
+        Deflect:
+            # ChanceMax: Maximum chance of deflecting arrows
+            # MaxBonusLevel: Level when the maximum chance to deflect is reached
+            ChanceMax: 50.0
+            MaxBonusLevel: 1000
+
+        IronGrip:
+            # ChanceMax: Maximum chance of preventing being disarmed
+            # MaxBonusLevel: Level when the maximum chance to prevent being disarmed is reached
+            ChanceMax: 100.0
+            MaxBonusLevel: 1000
+
+        IronArm:
+            # BonusMin: Minimum bonus damage for unarmed
+            # BonusMax: Maximum bonus damage for unarmed
+            # IncreaseLevel: Bonus damage increases every increase level
+            BonusMin: 3.0
+            BonusMax: 8.0
+            IncreaseLevel: 50
+    #
+    #  Settings for Woodcutting
+    ###
     Woodcutting:
-        Level_Cap: 0
+        LeafBlower:
+            # UnlockLevel: At this level, the passive ability LeafBlower unlocks
+            UnlockLevel: 100
 
+        DoubleDrops:
+            # ChanceMax: Maximum chance of receiving double drops
+            # MaxBonusLevel: Level when the maximum chance of receiving double drops is reached
+            ChanceMax: 100.0
+            MaxBonusLevel: 1000
 #
-#  Settings for Double Drops
+#  Customize the kraken!
 ###
-Double_Drops:
-    Herbalism:
-        Brown_Mushroom: true
-        Cactus: true
-        Carrot: true
-        Cocoa: true
-        Crops: true
-        Melon_Block: true
-        Nether_Warts: true
-        Potato: true
-        Pumpkin: true
-        Red_Mushroom: true
-        Red_Rose: true
-        Sugar_Cane_Block: true
-        Vine: true
-        Water_Lily: true
-        Yellow_Flower: true
-    Mining:
-        Coal_Ore: true
-        Diamond_Ore: true
-        Emerald_Ore: true
-        Ender_Stone: true
-        Glowstone: true
-        Gold_Ore: true
-        Iron_Ore: true
-        Lapis_Ore: true
-        Mossy_Cobblestone: true
-        Netherrack: true
-        Obsidian: true
-        Quartz_Ore: true
-        Redstone_Ore: true
-        Sandstone: true
-        Stone: true
-    Woodcutting:
-        Oak: true
-        Birch: true
-        Spruce: true
-        Jungle: true
-
-#
-#  Settings for commands
-###
-Commands:
-    Generic:
-        # If true, when using partial names in commands mcMMO will try to look for a match from
-        # the offline players. Enabling this might slow the server down if there are a lot of offline players.
-        Match_OfflinePlayers: false
-    mcmmo:
-        Donate_Message: true
-    inspect:
-        Max_Distance: 30.0
-    ptp:
-        Cooldown: 120
-        Warmup: 5
-        RecentlyHurt_Cooldown: 60
-        Confirm_Required: true
-        Request_Timeout: 300
-        # If true, require players to have a mcmmo.commands.ptp.world.[WorldName] permission
-        # to teleport to, from, or within any given world.
-        World_Based_Permissions: false
-    partychat:
-        Chat_Prefix_Format: '[[GREEN]]([[WHITE]]{0}[[GREEN]])'
-
-        # Allow mcMMO to use player display names in chat instead of their usernames
-        Use_Display_Names: true
-    adminchat:
-        Chat_Prefix_Format: '[[AQUA]][[[WHITE]]{0}[[AQUA]]]'
-
-        # Allow mcMMO to use player display names in chat instead of their usernames
-        Use_Display_Names: true
-
-#
-#  Settings for particles
-###
-Particles:
-    # These settings determine if fireworks should get launched when a player activates/deactivates an ability
-    Ability_Activation: false
-    Ability_Deactivation: false
-
-    # Determines if the fireworks should be a large ball or a small one
-    LargeFireworks: true
-
-    # Use particle effect when these abilities trigger
-    Dodge: true
-    Bleed: true
-    Greater_Impact: true
-
-    # These settings determine if fireworks should get launched when a player levels-up,
-    # this will happen by default for every 100 levels.
-    LevelUp_Enabled: true
-    LevelUp_Tier: 100
+Kraken:
+    Enabled: true
+    Tries_Before_Release: 50
+    Health: 50.0
+    Name: The Kraken
+    Attack_Interval_Seconds: 1
+    Attack_Damage: 1.0
+    Global_Effects: false
+    Allow_Escaping: false
+    Unleashed_Message:
+        Server: (PLAYER) has unleashed the kraken!
+        Player: THE KRAKEN HAS BEEN UNLEASHED!
+    Defeated_Message:
+        Escape: You have escaped from the kraken!
+        Killed: You have slain the kraken!
