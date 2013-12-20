@@ -56,22 +56,28 @@ Skills:
             # IncreasePercentage: This is a percentage value, 0.1 = 10%
             # MaxBonus: When the <MaxBonus> has been reached, the bonus percentage will not go up anymore. 2.0 = 200%
             IncreaseLevel: 50
-            IncreasePercentage: 0.1
-            MaxBonus: 2.0
+            IncreasePercentage: 0.125
+            #  ^^^^ Changed to 1.125 from 1.0 by Alpha Fetus. This is to increase early-game archery damage, while not
+            # over-buffing high level archery
+            MaxBonus: 2.45
+            #  ^^^^ Changed to 2.45 from 2.0 by Alpha Fetus. This is to adjust for the bonus precentage in order for
+            # archery not to get full precent bonus at level 700 instead of 1000.
             MaxDamage: 9.0
 
         Daze:
             # ChanceMax: Maximum chance of causing daze to opponents when on <MaxBonusLevel> or higher
             # MaxBonusLevel: Maximum bonus level of Daze, when a player reaches this level his chance of causing a daze will be <ChanceMax>
             # Modifier: Extra damage for arrows that cause a daze (2 damage = 1 heart)
-            ChanceMax: 50.0
+            ChanceMax: 40.0
+            #  ^^^^ Changed to 40.0 from 50.0 by Alpha Fetus. To compensate for the slight buff in mid-level archery.
             MaxBonusLevel: 1000
             Modifier: 4.0
 
         Retrieve:
             # ChanceMax: Maximum chance of retrieving arrows when on <MaxBonusLevel> or higher
             # MaxBonusLevel: Maximum bonus level for Arrow retrieval, at this level the chance of retrieving arrows from mobs is <ChanceMax>
-            ChanceMax: 100.0
+            ChanceMax: 75.0
+            #  ^^^^ Changed to 75.0 from 100.0 by Alpha Fetus. 100% is OP.
             MaxBonusLevel: 1000
 
         # ForceMultiplier: Multiply the force of the bow by this for an XP boost.
@@ -84,26 +90,34 @@ Skills:
             # MaxBonus: Maximum bonus damage when on <MaxBonusLevel> or higher
             # MaxBonusLevel: Level where <MaxBonus> is reached
             MaxBonus: 4.0
-            MaxBonusLevel: 200
+            MaxBonusLevel: 600
+            #  ^^^^ Changed to 600 from 200 by Alpha Fetus. Requires a higher Axes level in 
+            # order to do a high base damage
 
         AxesCritical:
             # ChanceMax: Maximum chance of causing a critical hit when on <MaxBonusLevel> or higher
             # MaxBonusLevel: Level where <ChanceMax> of causing critical hits is reached
-            ChanceMax: 37.50
-            MaxBonusLevel: 600
+            ChanceMax: 33.33
+            #  ^^^^ Changed to 33.33% from 37.50% by Alpha Fetus. Axes OP. Nerfing the % Critical Hit
+            MaxBonusLevel: 800
+            #  ^^^^ Changed to 800 from 600 to further decrease mid-level axes without hurting high-level axes potential.
 
         AxesCritical:
             # Damage modifier of critical hits for PVP / PVE, when causing a critical hit the damage gets multiplied by the modifier
-            PVP_Modifier: 1.5
-            PVE_Modifier: 2.0
+            PVP_Modifier: 1.425
+            #  ^^^^ Changed to 1.425 from 1.50 by Alpha Fetus. Axes doing a ton of damage.
+            PVE_Modifier: 2.25
+            #  ^^^^ Changed to 2.25 from 2 by Alpha Fetus. Compensation for lowering mid-level axes
 
         GreaterImpact:
             # Chance: Chance of hitting with GreaterImpact, mobs are knocked backwards when successful
             # KnockbackModifier: Velocity modifier of GreaterImpact hits, this determines how great the knockback is
             # BonusDamage: Extra damage for GreaterImpact hits
             Chance: 25.0
-            KnockbackModifier: 1.5
-            BonusDamage: 2.0
+            KnockbackModifier: 1.90
+            #  ^^^^ Changed to 1.90 from 1.5 by Alpha Fetus. Compensation for lowering mid-level axes
+            BonusDamage: 1.88
+            #  ^^^^ Changed to 1.88 from 2.0 by Alpha Fetus. Lowering chanced damage to demand more skill from axe users
 
         ArmorImpact:
             # IncreaseLevel: Every <IncreaseLevel> the durability damage goes up with 1
@@ -111,7 +125,8 @@ Skills:
             # MaxPercentageDurabilityDamage: Durability damage cap for ArmorImpact, 20% means that you can never destroy a piece of armor in less than 5 hits
             IncreaseLevel: 50
             Chance: 5.0
-            MaxPercentageDurabilityDamage: 10.0
+            MaxPercentageDurabilityDamage: 11.25
+            #  ^^^^ Changed to 11.25 from 10 by Alpha Fetus. Compensation for lowered chanced damage.
 
         SkullSplitter:
             # DamageModifier: Damage will get divided by this modifier
@@ -129,7 +144,8 @@ Skills:
             Rank_5: 500
             Rank_6: 625
             Rank_7: 700
-            Rank_8: 875
+            Rank_8: 925
+            #  ^^^^ Changed to 925 from 850(I think :S) by Alpha Fetus. Fishing OP at high levels.
 
         ShakeChance:
             Rank_1: 15.0
@@ -294,7 +310,9 @@ Skills:
 
         Salvage:
             # UnlockLevel: Level when Salvage become available
-            UnlockLevel: 600
+            UnlockLevel: 750
+            #  ^^^^ Changed to 750 from 600 by Alpha Fetus. Diamonds are able to be sold in the shop. Repairmen will
+            # be super rich.
 
         ArcaneForging:
             May_Lose_Enchants: true
@@ -324,8 +342,10 @@ Skills:
                 Rank_4: 30.0
                 Rank_5: 25.0
                 Rank_6: 20.0
-                Rank_7: 15.0
-                Rank_8: 10.0
+                Rank_7: 10.0
+                #  ^^^^ Changed to 15 from 10 by Alpha Fetus. To balance the diference between rank 7 and 8.
+                Rank_8: 0.0
+                #  ^^^^ Changed to 0 from 10 by Alpha Fetus. By order of Aridean.
     #
     #  Settings for Smelting
     ###
@@ -420,7 +440,8 @@ Skills:
             # UnlockLevel: Level when FastFood unlocks
             # Chance: The chance for wolves to heal hp when inflicting damage
             UnlockLevel: 50
-            Chance: 50.0
+            Chance: 60.0
+            #  ^^^^ Changed to 60 from 50 by Alpha Fetus. Making Taming more Viable.
 
         EnvironmentallyAware:
             # UnlockLevel: Level when EnvironmentallyAware unlocks
@@ -430,7 +451,8 @@ Skills:
             # UnlockLevel: Level when ThickFur unlocks
             # Modifier: Damage will get divided by this modifier
             UnlockLevel: 250
-            Modifier: 2.0
+            Modifier: 2.5
+            #  ^^^^ Changed to 2.5 from 2.0 by Alpha Fetus. Making taming more viable
 
         HolyHound:
             # UnlockLevel: Level when HolyHound unlocks
@@ -445,8 +467,9 @@ Skills:
         SharpenedClaws:
             # UnlockLevel: Level when SharpenedClaws unlocks
             # Bonus: This bonus will get added to the damage caused
-            UnlockLevel: 750
-            Bonus: 2.0
+            UnlockLevel: 850
+            Bonus: 3.25
+            #  ^^^^ Changed to 3.25 from 2.0 by Alpha Fetus. Making taming more Viable at high level PVP.
     #
     #  Settings for Unarmed
     ###
@@ -494,11 +517,13 @@ Skills:
 ###
 Kraken:
     Enabled: true
-    Tries_Before_Release: 50
+    Tries_Before_Release: 35
+    #  ^^^^ Changed to 35 from 50. To make autofishers butthurt. 
     Health: 50.0
     Name: The Kraken
     Attack_Interval_Seconds: 1
-    Attack_Damage: 1.0
+    Attack_Damage: 1.75
+    #  ^^^^ Changed to 1.75 from 1.0. To combat Autofishing.
     Global_Effects: false
     Allow_Escaping: false
     Unleashed_Message:
