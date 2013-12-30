@@ -56,7 +56,7 @@ Skills:
             # IncreasePercentage: This is a percentage value, 0.1 = 10%
             # MaxBonus: When the <MaxBonus> has been reached, the bonus percentage will not go up anymore. 2.0 = 200%
             IncreaseLevel: 50
-            IncreasePercentage: 0.125
+            IncreasePercentage: 1.125
             #  ^^^^ Changed to 1.125 from 1.0 by Alpha Fetus. This is to increase early-game archery damage, while not
             # over-buffing high level archery
             MaxBonus: 2.45
