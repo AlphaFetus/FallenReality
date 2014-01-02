@@ -125,8 +125,8 @@ Skills:
             # MaxPercentageDurabilityDamage: Durability damage cap for ArmorImpact, 20% means that you can never destroy a piece of armor in less than 5 hits
             IncreaseLevel: 50
             Chance: 5.0
-            MaxPercentageDurabilityDamage: 11.25
-            #  ^^^^ Changed to 11.25 from 10 by Alpha Fetus. Compensation for lowered chanced damage.
+            MaxPercentageDurabilityDamage: 9.50
+            #  ^^^^ Changed to 9.50 from 11.25 by Alpha Fetus. Axes OP.
 
         SkullSplitter:
             # DamageModifier: Damage will get divided by this modifier
